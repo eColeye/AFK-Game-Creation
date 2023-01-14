@@ -34,6 +34,8 @@ public class Upgrades : MonoBehaviour
     public GameObject U11;
     public GameObject U12;
 
+    public GameObject[] U;
+
     //Strings
     private static string[] strings = { 
         "1",
@@ -50,12 +52,10 @@ public class Upgrades : MonoBehaviour
         "12"
     };
 
-
-
     //Other
-    public static int bought = 2;
+    public static int bought = 0;
 
-    public static void Upgrade(int key)
+    public void Upgrade(int key)
     {
         int count = 0;
         for(int i = 1; count < key; i++)
@@ -123,7 +123,92 @@ public class Upgrades : MonoBehaviour
         Refresh();
     }
 
-    private static void Refresh()
+    public void Up1()
+    {
+        //Upgrade Miner
+        Miner.initialRev = Miner.initialRev * 6;
+        strings[0] = "NULL";
+        bought++;
+    }
+    public void Up2()
+    {
+        //Upgrade Miner
+        Miner.initialRev = Miner.initialRev * 6;
+        strings[0] = "NULL";
+        bought++;
+    }
+    public void Up3()
+    {
+        //Upgrade Miner
+        Miner.initialRev = Miner.initialRev * 6;
+        strings[0] = "NULL";
+        bought++;
+    }
+    public void Up4()
+    {
+        //Upgrade Miner
+        Miner.initialRev = Miner.initialRev * 6;
+        strings[0] = "NULL";
+        bought++;
+    }
+    public void Up5()
+    {
+        //Upgrade Miner
+        Miner.initialRev = Miner.initialRev * 6;
+        strings[0] = "NULL";
+        bought++;
+    }
+    public void Up6()
+    {
+        //Upgrade Miner
+        Miner.initialRev = Miner.initialRev * 6;
+        strings[0] = "NULL";
+        bought++;
+    }
+    public void Up7()
+    {
+        //Upgrade Miner
+        Miner.initialRev = Miner.initialRev * 6;
+        strings[0] = "NULL";
+        bought++;
+    }
+    public void Up8()
+    {
+        //Upgrade Miner
+        Miner.initialRev = Miner.initialRev * 6;
+        strings[0] = "NULL";
+        bought++;
+    }
+    public void Up9()
+    {
+        //Upgrade Miner
+        Miner.initialRev = Miner.initialRev * 6;
+        strings[0] = "NULL";
+        bought++;
+    }
+    public void Up10()
+    {
+        //Upgrade Miner
+        Miner.initialRev = Miner.initialRev * 6;
+        strings[0] = "NULL";
+        bought++;
+    }
+    public void Up11()
+    {
+        //Upgrade Miner
+        Miner.initialRev = Miner.initialRev * 6;
+        strings[0] = "NULL";
+        bought++;
+    }
+    public void Up12()
+    {
+        //Upgrade Miner
+        Miner.initialRev = Miner.initialRev * 6;
+        strings[0] = "NULL";
+        bought++;
+    }
+
+    private void Refresh()
     {
         for(int i = 1 ; i <= (12 - bought); i++)
         {
@@ -158,7 +243,6 @@ public class Upgrades : MonoBehaviour
                             }
                         }
                     }
-                    T2.text = strings[1];
                     break;
                 case 3:
                     for (int temp = 0; found <= i; temp++)
@@ -302,7 +386,6 @@ public class Upgrades : MonoBehaviour
                     break;
             }
         }
-
         for(int i = 1; i <= bought; i++)
         {
             switch (i)
@@ -343,97 +426,9 @@ public class Upgrades : MonoBehaviour
                 case 12:
                     U1.SetActive(false);
                     break;
-
             }
         }
-
     }
-
-    public static void Up1()
-    {
-        //Upgrade Miner
-        Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
-        bought++;
-    }
-    public static void Up2()
-    {
-        //Upgrade Miner
-        Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
-        bought++;
-    }
-    public static void Up3()
-    {
-        //Upgrade Miner
-        Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
-        bought++;
-    }
-    public static void Up4()
-    {
-        //Upgrade Miner
-        Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
-        bought++;
-    }
-    public static void Up5()
-    {
-        //Upgrade Miner
-        Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
-        bought++;
-    }
-    public static void Up6()
-    {
-        //Upgrade Miner
-        Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
-        bought++;
-    }
-    public static void Up7()
-    {
-        //Upgrade Miner
-        Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
-        bought++;
-    }
-    public static void Up8()
-    {
-        //Upgrade Miner
-        Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
-        bought++;
-    }
-    public static void Up9()
-    {
-        //Upgrade Miner
-        Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
-        bought++;
-    }
-    public static void Up10()
-    {
-        //Upgrade Miner
-        Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
-        bought++;
-    }
-    public static void Up11()
-    {
-        //Upgrade Miner
-        Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
-        bought++;
-    }
-    public static void Up12()
-    {
-        //Upgrade Miner
-        Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
-        bought++;
-    }
-
 
     /*
         for(int i = 1 ; i <= (12 - bought); i++)
@@ -470,18 +465,4 @@ public class Upgrades : MonoBehaviour
 
 
     */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }   
