@@ -49,7 +49,7 @@ public class Granade : MonoBehaviour
             default: return;
         }
     }
-
-    private void Update_Cost() { cost = initialCost * (GameManager.granadeLevel + 1) * Mathf.Pow(costMulti, GameManager.granadeLevel - 1); }
-    private void Update_Production() { GameManager.granadeProduction = initialRev * GameManager.granadeLevel; }
+    public static void Refresh(){Update_Cost();Update_Production();}
+    private static void Update_Cost() { cost = initialCost * (GameManager.granadeLevel + 1) * Mathf.Pow(costMulti, GameManager.granadeLevel - 1); }
+    private static void Update_Production() { GameManager.granadeProduction = initialRev * GameManager.granadeLevel; }
 }

@@ -49,7 +49,7 @@ public class Drill : MonoBehaviour
             default: return;
         }
     }
-
-    private void Update_Cost() { cost = initialCost * (GameManager.drillLevel + 1) * Mathf.Pow(costMulti, GameManager.drillLevel - 1); }
-    private void Update_Production() { GameManager.drillProduction = initialRev * GameManager.drillLevel; }
+    public static void Refresh(){Update_Cost();Update_Production();}
+    private static void Update_Cost() { cost = initialCost * (GameManager.drillLevel + 1) * Mathf.Pow(costMulti, GameManager.drillLevel - 1); }
+    private static void Update_Production() { GameManager.drillProduction = initialRev * GameManager.drillLevel; }
 }

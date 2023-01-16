@@ -50,6 +50,7 @@ public class Ufo : MonoBehaviour
         }
     }
 
-    private void Update_Cost() { cost = initialCost * (GameManager.ufoLevel + 1) * Mathf.Pow(costMulti, GameManager.ufoLevel - 1); }
-    private void Update_Production() { GameManager.ufoProduction = initialRev * GameManager.ufoLevel; }
+    public static void Refresh(){Update_Cost();Update_Production();}
+    private static void Update_Cost() { cost = initialCost * (GameManager.ufoLevel + 1) * Mathf.Pow(costMulti, GameManager.ufoLevel - 1); }
+    private static void Update_Production() { GameManager.ufoProduction = initialRev * GameManager.ufoLevel; }
 }

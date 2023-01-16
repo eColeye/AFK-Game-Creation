@@ -9,8 +9,24 @@ public class GameManager : MonoBehaviour
 {
     //Money
     public Text moneyText;
-    private string tempMoney;
-    private static float money = 10000000f;
+    public static float money
+    {
+        get
+        {
+            if(_money == -1)
+            {
+                _money = PlayerPrefs.GetFloat("Money",1000000000000f);
+            }
+            return _money;
+        }
+        set
+        {
+            PlayerPrefs.SetFloat("Money", value);
+            PlayerPrefs.Save();
+            _money = value;
+        }
+    }
+    private static float _money = -1;
 
     //lvl incs
     //lvl 15 time / 2
@@ -31,93 +47,339 @@ public class GameManager : MonoBehaviour
 
     //Miner 1
     public Text minerText;
-    public static int minerLevel = 1;
     public static float minerProduction = Miner.initialRev;
     public static float minerInter = 0.6f;
     public static float minerTime = 0f;
+    private static int _minerLevel = -1;
+    public static int minerLevel     
+    {
+        get
+        {
+            if(_minerLevel == -1)
+            {
+                _minerLevel = PlayerPrefs.GetInt("minerLevel",1);
+            }
+            return _minerLevel;
+        }
+        set
+        {
+            PlayerPrefs.SetFloat("minerLevel", value);
+            PlayerPrefs.Save();
+            _minerLevel = value;
+        }
+    }
 
     //Drill 2
     public Text drillText;
-    public static int drillLevel = 0;
     public static float drillProduction = Drill.initialRev;
     public static float drillInter = (3 * 1);
     public static float drillTime = 0f;
+    private static int _drillLevel = -1;
+    public static int drillLevel    
+    {
+        get
+        {
+            if(_drillLevel == -1)
+            {
+                _drillLevel = PlayerPrefs.GetInt("drillLevel",0);
+            }
+            return _drillLevel;
+        }
+        set
+        {
+            PlayerPrefs.SetFloat("drillLevel", value);
+            PlayerPrefs.Save();
+            _drillLevel = value;
+        }
+    }
 
     //Car 3
     public Text carText;
-    public static int carLevel = 0;
     public static float carProduction = Car.initialRev;
     public static float carInter = (3 * 2);
     public static float carTime = 0f;
+    private static int _carLevel = -1;
+    public static int carLevel    
+    {
+        get
+        {
+            if(_carLevel == -1)
+            {
+                _carLevel = PlayerPrefs.GetInt("carLevel",0);
+            }
+            return _carLevel;
+        }
+        set
+        {
+            PlayerPrefs.SetFloat("carLevel", value);
+            PlayerPrefs.Save();
+            _carLevel = value;
+        }
+    }
 
     //Granade 4
     public Text granadeText;
-    public static int granadeLevel = 0;
     public static float granadeProduction = Granade.initialRev;
     public static float granadeInter = (3 * 4);
     public static float granadeTime = 0f;
+    private static int _granadeLevel = -1;
+    public static int granadeLevel    
+    {
+        get
+        {
+            if(_granadeLevel == -1)
+            {
+                _granadeLevel = PlayerPrefs.GetInt("granadeLevel",0);
+            }
+            return _granadeLevel;
+        }
+        set
+        {
+            PlayerPrefs.SetFloat("granadeLevel", value);
+            PlayerPrefs.Save();
+            _granadeLevel = value;
+        }
+    }
 
     //Coal Mine 5
     public Text coalText;
-    public static int coalLevel = 0;
     public static float coalProduction = Coal.initialRev;
     public static float coalInter = (3 * 8);
     public static float coalTime = 0f;
+    private static int _coalLevel = -1;
+    public static int coalLevel     
+    {
+        get
+        {
+            if(_coalLevel == -1)
+            {
+                _coalLevel = PlayerPrefs.GetInt("coalLevel",0);
+            }
+            return _coalLevel;
+        }
+        set
+        {
+            PlayerPrefs.SetFloat("coalLevel", value);
+            PlayerPrefs.Save();
+            _coalLevel = value;
+        }
+    }
 
     //Truck 6
     public Text truckText;
-    public static int truckLevel = 0;
     public static float truckProduction = Truck.initialRev;
     public static float truckInter = (3 * 16);
     public static float truckTime = 0f;
+    private static int _truckLevel = -1;
+    public static int truckLevel     
+    {
+        get
+        {
+            if(_truckLevel == -1)
+            {
+                _truckLevel = PlayerPrefs.GetInt("truckLevel",0);
+            }
+            return _truckLevel;
+        }
+        set
+        {
+            PlayerPrefs.SetFloat("truckLevel", value);
+            PlayerPrefs.Save();
+            _truckLevel = value;
+        }
+    }
 
     //TnT
     public Text tntText;
-    public static int tntLevel = 0;
     public static float tntProduction = Tnt.initialRev;
     public static float tntInter = (3 * 32);
     public static float tntTime = 0f;
+    private static int _tntLevel = -1;
+    public static int tntLevel     
+    {
+        get
+        {
+            if(_tntLevel == -1)
+            {
+                _tntLevel = PlayerPrefs.GetInt("tntLevel",0);
+            }
+            return _tntLevel;
+        }
+        set
+        {
+            PlayerPrefs.SetFloat("tntLevel", value);
+            PlayerPrefs.Save();
+            _tntLevel = value;
+        }
+    }
 
     //Rocket
     public Text rocketText;
-    public static int rocketLevel = 0;
     public static float rocketProduction = Rocket.initialRev;
     public static float rocketInter = (3 * 64);
     public static float rocketTime = 0f;
+    private static int _rocketLevel = -1;
+    public static int rocketLevel     
+    {
+        get
+        {
+            if(_rocketLevel == -1)
+            {
+                _rocketLevel = PlayerPrefs.GetInt("rocketLevel",0);
+            }
+            return _rocketLevel;
+        }
+        set
+        {
+            PlayerPrefs.SetFloat("rocketLevel", value);
+            PlayerPrefs.Save();
+            _rocketLevel = value;
+        }
+    }
 
     //Nuke
     public Text nukeText;
-    public static int nukeLevel = 0;
     public static float nukeProduction = Nuke.initialRev;
     public static float nukeInter = (3 * 128);
     public static float nukeTime = 0f;
+    private static int _nukeLevel = -1;
+    public static int nukeLevel     
+    {
+        get
+        {
+            if(_nukeLevel == -1)
+            {
+                _nukeLevel = PlayerPrefs.GetInt("nukeLevel",0);
+            }
+            return _nukeLevel;
+        }
+        set
+        {
+            PlayerPrefs.SetFloat("nukeLevel", value);
+            PlayerPrefs.Save();
+            _nukeLevel = value;
+        }
+    }
 
     //UFO
     public Text ufoText;
-    public static int ufoLevel = 0;
     public static float ufoProduction = Ufo.initialRev;
     public static float ufoInter = (3 * 256);
     public static float ufoTime = 0f;
+    private static int _ufoLevel = -1;
+    public static int ufoLevel     
+    {
+        get
+        {
+            if(_ufoLevel == -1)
+            {
+                _ufoLevel = PlayerPrefs.GetInt("ufoLevel",0);
+            }
+            return _ufoLevel;
+        }
+        set
+        {
+            PlayerPrefs.SetFloat("ufoLevel", value);
+            PlayerPrefs.Save();
+            _ufoLevel = value;
+        }
+    }
 
     //BlackHole
     public Text blackText;
-    public static int blackLevel = 0;
     public static float blackProduction = Black.initialRev;
     public static float blackInter = (3 * 512);
     public static float blackTime = 0f;
+    private static int _blackLevel = -1;
+    public static int blackLevel     
+    {
+        get
+        {
+            if(_blackLevel == -1)
+            {
+                _blackLevel = PlayerPrefs.GetInt("blackLevel",0);
+            }
+            return _blackLevel;
+        }
+        set
+        {
+            PlayerPrefs.SetFloat("blackLevel", value);
+            PlayerPrefs.Save();
+            _blackLevel = value;
+        }
+    }
 
     //WormHole
     public Text wormText;
-    public static int wormLevel = 0;
     public static float wormProduction = Worm.initialRev;
     public static float wormInter = (3 * 1024);
     public static float wormTime = 0f;
+    private static int _wormLevel = -1;
+    public static int wormLevel     
+    {
+        get
+        {
+            if(_wormLevel == -1)
+            {
+                _wormLevel = PlayerPrefs.GetInt("wormLevel",0);
+            }
+            return _wormLevel;
+        }
+        set
+        {
+            PlayerPrefs.SetFloat("wormLevel", value);
+            PlayerPrefs.Save();
+            _wormLevel = value;
+        }
+    }
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+    }
+
+    public static void Reset(){
+        PlayerPrefs.DeleteAll();
+
+        _money = -1;
+
+        _minerLevel = -1;
+        Miner.Refresh();
+
+        _drillLevel = -1;
+        Drill.Refresh();
+
+        _carLevel = -1;
+        Car.Refresh();
+
+        _granadeLevel = -1;
+        Granade.Refresh();
+
+        _coalLevel = -1;
+        Coal.Refresh();
+
+        _truckLevel = -1;
+        Truck.Refresh();
+
+        _tntLevel = -1;
+        Tnt.Refresh();
+
+        _rocketLevel = -1;
+        Rocket.Refresh();
+
+        _nukeLevel = -1;
+        Nuke.Refresh();
+
+        _ufoLevel = -1;
+        Ufo.Refresh();
+
+        _blackLevel = -1;
+        Black.Refresh();
+
+        _wormLevel = -1;
+        Worm.Refresh();
     }
 
     // Update is called once per frame
@@ -275,7 +537,7 @@ public class GameManager : MonoBehaviour
 
     public string MoneyCalc(float cost)
     {
-        tempMoney = cost.ToString("F0");
+        string tempMoney = cost.ToString("F0");
         if(tempMoney.Length > 7)
         {
             return tempMoney[0] + "." + tempMoney.Substring(1, 3) + "x10^" + (tempMoney.Length - 1);

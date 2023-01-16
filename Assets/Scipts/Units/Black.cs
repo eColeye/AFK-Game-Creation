@@ -49,8 +49,7 @@ public class Black : MonoBehaviour
             default: return;
         }
     }
-
-
-    private void Update_Cost() { cost = initialCost * (GameManager.blackLevel + 1) * Mathf.Pow(costMulti, GameManager.blackLevel - 1); }
-    private void Update_Production() { GameManager.blackProduction = initialRev * GameManager.blackLevel; }
+    public static void Refresh(){Update_Cost();Update_Production();}
+    private static void Update_Cost() { cost = initialCost * (GameManager.blackLevel + 1) * Mathf.Pow(costMulti, GameManager.blackLevel - 1); }
+    private static void Update_Production() { GameManager.blackProduction = initialRev * GameManager.blackLevel; }
 }

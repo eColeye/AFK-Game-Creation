@@ -49,6 +49,7 @@ public class Tnt : MonoBehaviour
             default: return;
         }
     }
-    private void Update_Cost() { cost = initialCost * (GameManager.tntLevel + 1) * Mathf.Pow(costMulti, GameManager.tntLevel - 1); }
-    private void Update_Production() { GameManager.tntProduction = initialRev * GameManager.tntLevel; }
+    public static void Refresh(){Update_Cost();Update_Production();}
+    private static void Update_Cost() { cost = initialCost * (GameManager.tntLevel + 1) * Mathf.Pow(costMulti, GameManager.tntLevel - 1); }
+    private static void Update_Production() { GameManager.tntProduction = initialRev * GameManager.tntLevel; }
 }

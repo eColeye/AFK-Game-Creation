@@ -50,7 +50,7 @@ public class Car : MonoBehaviour
             default: return;
         }
     }
-
-    private void Update_Cost() { cost = initialCost * (GameManager.carLevel + 1) * Mathf.Pow(costMulti, GameManager.carLevel - 1); }
-    private void Update_Production() { GameManager.carProduction = initialRev * GameManager.carLevel; }
+    public static void Refresh(){Update_Cost();Update_Production();}
+    private static void Update_Cost() { cost = initialCost * (GameManager.carLevel + 1) * Mathf.Pow(costMulti, GameManager.carLevel - 1); }
+    private static void Update_Production() { GameManager.carProduction = initialRev * GameManager.carLevel; }
 }

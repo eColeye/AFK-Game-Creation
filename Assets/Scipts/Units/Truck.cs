@@ -49,7 +49,7 @@ public class Truck : MonoBehaviour
             default: return;
         }
     }
-
-    private void Update_Cost() { cost = initialCost * (GameManager.truckLevel + 1) * Mathf.Pow(costMulti, GameManager.truckLevel - 1); }
-    private void Update_Production() { GameManager.truckProduction = initialRev * GameManager.truckLevel; }
+    public static void Refresh(){Update_Cost();Update_Production();}
+    private static void Update_Cost() { cost = initialCost * (GameManager.truckLevel + 1) * Mathf.Pow(costMulti, GameManager.truckLevel - 1); }
+    private static void Update_Production() { GameManager.truckProduction = initialRev * GameManager.truckLevel; }
 }

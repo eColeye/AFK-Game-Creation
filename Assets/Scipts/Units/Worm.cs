@@ -49,6 +49,7 @@ public class Worm : MonoBehaviour
             default: return;
         }
     }
-    private void Update_Cost() { cost = initialCost * (GameManager.wormLevel + 1) * Mathf.Pow(costMulti, GameManager.wormLevel - 1); }
-    private void Update_Production() { GameManager.wormProduction = initialRev * GameManager.wormLevel; }
+    public static void Refresh(){Update_Cost();Update_Production();}
+    private static void Update_Cost() { cost = initialCost * (GameManager.wormLevel + 1) * Mathf.Pow(costMulti, GameManager.wormLevel - 1); }
+    private static void Update_Production() { GameManager.wormProduction = initialRev * GameManager.wormLevel; }
 }

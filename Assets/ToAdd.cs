@@ -10,13 +10,15 @@ public class ToAdd : MonoBehaviour
      *      -
      * Help menu:
      *      -List abilities.
-     *      -
+     *      -reset button
+     *      -New screen? or overlay? 
      * Saveing:
+     X      -Unit saving   
      *      -Log in time. For log in bonus
      *      -Ability/Unit lvl
      * Upgrades
      *      -Scroll menu
-     *      -Buy abilities
+     *      -Buy abilities (need abilities done first. Manage cost first.)
      * Graphics
      *      -Upgrade
      *      -Ablilities
