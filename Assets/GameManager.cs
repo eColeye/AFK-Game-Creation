@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     //Money
     public Text moneyText;
     private string tempMoney;
-    private static float money = 100000000000000000f;
+    private static float money = 10000000f;
 
     //lvl incs
     //lvl 15 time / 2
@@ -21,7 +21,8 @@ public class GameManager : MonoBehaviour
     //lvl 100 make * 4
 
     //abilities:
-    //rev booster
+    //rev  * 2      ??
+    //cost / 2      ??
 
     //help
     /*Shows what upgrades you get per lvl inc,
@@ -80,35 +81,35 @@ public class GameManager : MonoBehaviour
     //Rocket
     public Text rocketText;
     public static int rocketLevel = 0;
-    public static float rocketProduction = Tnt.initialRev;
+    public static float rocketProduction = Rocket.initialRev;
     public static float rocketInter = (3 * 64);
     public static float rocketTime = 0f;
 
     //Nuke
     public Text nukeText;
     public static int nukeLevel = 0;
-    public static float nukeProduction = Tnt.initialRev;
+    public static float nukeProduction = Nuke.initialRev;
     public static float nukeInter = (3 * 128);
     public static float nukeTime = 0f;
 
     //UFO
     public Text ufoText;
     public static int ufoLevel = 0;
-    public static float ufoProduction = Tnt.initialRev;
+    public static float ufoProduction = Ufo.initialRev;
     public static float ufoInter = (3 * 256);
     public static float ufoTime = 0f;
 
     //BlackHole
     public Text blackText;
     public static int blackLevel = 0;
-    public static float blackProduction = Tnt.initialRev;
+    public static float blackProduction = Black.initialRev;
     public static float blackInter = (3 * 512);
     public static float blackTime = 0f;
 
     //WormHole
     public Text wormText;
     public static int wormLevel = 0;
-    public static float wormProduction = Tnt.initialRev;
+    public static float wormProduction = Worm.initialRev;
     public static float wormInter = (3 * 1024);
     public static float wormTime = 0f;
 
@@ -130,7 +131,7 @@ public class GameManager : MonoBehaviour
         {
             minerTime += time;
             miner();
-            minerText.text = "Miner Lvl " + minerLevel + "\nProduction " + minerProduction + "        " + TimeCalc(minerInter - minerTime) + "\nUpgrade Cost: " + MoneyCalc(Miner.cost);
+            minerText.text = "Miner Lvl " + minerLevel + "\nProduction " + minerProduction + "  " + TimeCalc(minerInter - minerTime) + "\nUpgrade Cost: " + MoneyCalc(Miner.cost);
         }
 
         //drill
@@ -138,9 +139,9 @@ public class GameManager : MonoBehaviour
         {
             drill();
             drillTime += time;
-            drillText.text = "Drill Lvl " + drillLevel + "\nProduction " + MoneyCalc(drillProduction) + "        " + TimeCalc(drillInter - drillTime) + "\nUpgrade Cost: " + MoneyCalc(Drill.cost);
+            drillText.text = "Drill Lvl " + drillLevel + "\nProduction " + MoneyCalc(drillProduction) + "  " + TimeCalc(drillInter - drillTime) + "\nUpgrade Cost: " + MoneyCalc(Drill.cost);
         }else{
-            drillText.text = "Drill Lvl " + drillLevel + "\nProduction " + MoneyCalc(drillProduction) + "        " + TimeCalc(drillInter) + "\nBuy Cost: " + MoneyCalc(Drill.cost);
+            drillText.text = "Drill Lvl " + drillLevel + "\nProduction " + MoneyCalc(drillProduction) + "  " + TimeCalc(drillInter) + "\nBuy Cost: " + MoneyCalc(Drill.cost);
         }
 
         //car
@@ -148,9 +149,9 @@ public class GameManager : MonoBehaviour
         {
             car();
             carTime += time;
-            carText.text = "Car Lvl " + carLevel + "\nProduction " + MoneyCalc(carProduction) + "        " + TimeCalc(carInter - carTime) + "\nUpgrade Cost: " + MoneyCalc(Car.cost);
+            carText.text = "Car Lvl " + carLevel + "\nProduction " + MoneyCalc(carProduction) + "  " + TimeCalc(carInter - carTime) + "\nUpgrade Cost: " + MoneyCalc(Car.cost);
         }else{
-            carText.text = "Car Lvl " + carLevel + "\nProduction " + MoneyCalc(carProduction) + "        " + TimeCalc(carInter) + "\nBuy Cost: " + MoneyCalc(Car.cost);
+            carText.text = "Car Lvl " + carLevel + "\nProduction " + MoneyCalc(carProduction) + "  " + TimeCalc(carInter) + "\nBuy Cost: " + MoneyCalc(Car.cost);
         }
 
         //Granade
@@ -158,9 +159,9 @@ public class GameManager : MonoBehaviour
         {
             granade();
             granadeTime += time;
-            granadeText.text = "Granade Lvl " + granadeLevel + "\nProduction " + MoneyCalc(granadeProduction) + "        " + TimeCalc(granadeInter - granadeTime) + "\nUpgrade Cost: " + MoneyCalc(Granade.cost);
+            granadeText.text = "Granade Lvl " + granadeLevel + "\nProduction " + MoneyCalc(granadeProduction) + "  " + TimeCalc(granadeInter - granadeTime) + "\nUpgrade Cost: " + MoneyCalc(Granade.cost);
         }else{
-            granadeText.text = "Granade Lvl " + granadeLevel + "\nProduction " + MoneyCalc(granadeProduction) + "        " + TimeCalc(granadeInter) + "\nBuy Cost: " + MoneyCalc(Granade.cost);
+            granadeText.text = "Granade Lvl " + granadeLevel + "\nProduction " + MoneyCalc(granadeProduction) + "  " + TimeCalc(granadeInter) + "\nBuy Cost: " + MoneyCalc(Granade.cost);
         }
 
         //coal
@@ -168,11 +169,11 @@ public class GameManager : MonoBehaviour
         {
             coal();
             coalTime += time;
-            coalText.text = "Coal Mine Lvl " + coalLevel + "\nProduction " + MoneyCalc(coalProduction) + "        " + TimeCalc(coalInter - coalTime) + "\nUpgrade Cost: " + MoneyCalc(Coal.cost); ;
+            coalText.text = "Coal Mine Lvl " + coalLevel + "\nProduction " + MoneyCalc(coalProduction) + "  " + TimeCalc(coalInter - coalTime) + "\nUpgrade Cost: " + MoneyCalc(Coal.cost); ;
         }
         else
         {
-            coalText.text = "Coal Mine Lvl " + coalLevel + "\nProduction " + MoneyCalc(coalProduction) + "        " + TimeCalc(coalInter) + "\nBuy Cost: " + MoneyCalc(Coal.cost); ;
+            coalText.text = "Coal Mine Lvl " + coalLevel + "\nProduction " + MoneyCalc(coalProduction) + "  " + TimeCalc(coalInter) + "\nBuy Cost: " + MoneyCalc(Coal.cost); ;
         }
 
 
@@ -181,11 +182,11 @@ public class GameManager : MonoBehaviour
         {
             truck();
             truckTime += time;
-            truckText.text = "UHaul Truck Lvl " + truckLevel + "\nProduction " + MoneyCalc(truckProduction) + "        " + TimeCalc(truckInter - truckTime) + "\nUpgrade Cost: " + MoneyCalc(Truck.cost);
+            truckText.text = "UHaul Truck Lvl " + truckLevel + "\nProduction " + MoneyCalc(truckProduction) + "  " + TimeCalc(truckInter - truckTime) + "\nUpgrade Cost: " + MoneyCalc(Truck.cost);
         }
         else
         {
-            truckText.text = "UHaul Truck Lvl " + truckLevel + "\nProduction " + MoneyCalc(truckProduction) + "        " + TimeCalc(truckInter) + "\nBuy Cost: " + MoneyCalc(Truck.cost); ;
+            truckText.text = "UHaul Truck Lvl " + truckLevel + "\nProduction " + MoneyCalc(truckProduction) + "  " + TimeCalc(truckInter) + "\nBuy Cost: " + MoneyCalc(Truck.cost); ;
         }
 
         //tnt
@@ -193,11 +194,11 @@ public class GameManager : MonoBehaviour
         {
             tnt();
             tntTime += time;
-            tntText.text = "TnT Lvl " + tntLevel + "\nProduction " + MoneyCalc(tntProduction) + "        " + TimeCalc(tntInter - tntTime) + "\nUpgrade Cost: " + MoneyCalc(Tnt.cost);
+            tntText.text = "TnT Lvl " + tntLevel + "\nProduction " + MoneyCalc(tntProduction) + "  " + TimeCalc(tntInter - tntTime) + "\nUpgrade Cost: " + MoneyCalc(Tnt.cost);
         }
         else
         {
-            tntText.text = "TnT Lvl " + tntLevel + "\nProduction " + MoneyCalc(tntProduction) + "        " + TimeCalc(tntInter) + "\nBuy Cost: " + MoneyCalc(Tnt.cost);
+            tntText.text = "TnT Lvl " + tntLevel + "\nProduction " + MoneyCalc(tntProduction) + "  " + TimeCalc(tntInter) + "\nBuy Cost: " + MoneyCalc(Tnt.cost);
         }
 
         //rocket
@@ -205,11 +206,11 @@ public class GameManager : MonoBehaviour
         {
             rocket();
             rocketTime += time;
-            rocketText.text = "Rocket Lvl " + rocketLevel + "\nProduction " + MoneyCalc(rocketProduction) + "        " + TimeCalc(rocketInter - rocketTime) + "\nUpgrade Cost: " + MoneyCalc(Rocket.cost);
+            rocketText.text = "Rocket Lvl " + rocketLevel + "\nProduction " + MoneyCalc(rocketProduction) + "  " + TimeCalc(rocketInter - rocketTime) + "\nUpgrade Cost: " + MoneyCalc(Rocket.cost);
         }
         else
         {
-            rocketText.text = "Rocket Lvl " + rocketLevel + "\nProduction " + MoneyCalc(rocketProduction) + "        " + TimeCalc(rocketInter) + "\nBuy Cost: " + MoneyCalc(Rocket.cost);
+            rocketText.text = "Rocket Lvl " + rocketLevel + "\nProduction " + MoneyCalc(rocketProduction) + "  " + TimeCalc(rocketInter) + "\nBuy Cost: " + MoneyCalc(Rocket.cost);
         }
 
         //nuke
@@ -217,11 +218,11 @@ public class GameManager : MonoBehaviour
         {
             nuke();
             nukeTime += time;
-            nukeText.text = "Nuke Lvl " + nukeLevel + "\nProduction " + MoneyCalc(nukeProduction) + "        " + TimeCalc(nukeInter - nukeTime) + "\nUpgrade Cost: " + MoneyCalc(Nuke.cost);
+            nukeText.text = "Nuke Lvl " + nukeLevel + "\nProduction " + MoneyCalc(nukeProduction) + "  " + TimeCalc(nukeInter - nukeTime) + "\nUpgrade Cost: " + MoneyCalc(Nuke.cost);
         }
         else
         {
-            nukeText.text = "Nuke Lvl " + nukeLevel + "\nProduction " + MoneyCalc(nukeProduction) + "        " + TimeCalc(nukeInter) + "\nBuy Cost: " + MoneyCalc(Nuke.cost);
+            nukeText.text = "Nuke Lvl " + nukeLevel + "\nProduction " + MoneyCalc(nukeProduction) + "  " + TimeCalc(nukeInter) + "\nBuy Cost: " + MoneyCalc(Nuke.cost);
         }
 
         //ufo
@@ -229,11 +230,11 @@ public class GameManager : MonoBehaviour
         {
             ufo();
             ufoTime += time;
-            ufoText.text = "UFO Lvl " + ufoLevel + "\nProduction " + MoneyCalc(ufoProduction) + "        " + TimeCalc(ufoInter - ufoTime) + "\nUpgrade Cost: " + MoneyCalc(Ufo.cost);
+            ufoText.text = "UFO Lvl " + ufoLevel + "\nProduction " + MoneyCalc(ufoProduction) + "  " + TimeCalc(ufoInter - ufoTime) + "\nUpgrade Cost: " + MoneyCalc(Ufo.cost);
         }
         else
         {
-            ufoText.text = "UFO Lvl " + ufoLevel + "\nProduction " + MoneyCalc(ufoProduction) + "        " + TimeCalc(ufoInter) + "\nBuy Cost: " + MoneyCalc(Ufo.cost);
+            ufoText.text = "UFO Lvl " + ufoLevel + "\nProduction " + MoneyCalc(ufoProduction) + "  " + TimeCalc(ufoInter) + "\nBuy Cost: " + MoneyCalc(Ufo.cost);
         }
 
         //blackhole
@@ -241,11 +242,11 @@ public class GameManager : MonoBehaviour
         {
             black();
             blackTime += time;
-            blackText.text = "BlackHole Lvl " + blackLevel + "\nProduction " + MoneyCalc(blackProduction) + "        " + TimeCalc(blackInter - blackTime) + "\nUpgrade Cost: " + MoneyCalc(Black.cost);
+            blackText.text = "BlackHole Lvl " + blackLevel + "\nProduction " + MoneyCalc(blackProduction) + "  " + TimeCalc(blackInter - blackTime) + "\nUpgrade Cost: " + MoneyCalc(Black.cost);
         }
         else
         {
-            blackText.text = "BlackHole Lvl " + blackLevel + "\nProduction " + MoneyCalc(blackProduction) + "        " + TimeCalc(blackInter) + "\nBuy Cost: " + MoneyCalc(Black.cost);
+            blackText.text = "BlackHole Lvl " + blackLevel + "\nProduction " + MoneyCalc(blackProduction) + "  " + TimeCalc(blackInter) + "\nBuy Cost: " + MoneyCalc(Black.cost);
         }
 
         //wormhole
@@ -253,14 +254,14 @@ public class GameManager : MonoBehaviour
         {
             worm();
             wormTime += time;
-            wormText.text = "WormHole Lvl " + wormLevel + "\nProduction " + MoneyCalc(wormProduction) + "        " + TimeCalc(wormInter - wormTime) + "\nUpgrade Cost: " + MoneyCalc(Worm.cost);
+            wormText.text = "WormHole Lvl " + wormLevel + "\nProduction " + MoneyCalc(wormProduction) + "  " + TimeCalc(wormInter - wormTime) + "\nUpgrade Cost: " + MoneyCalc(Worm.cost);
         }
         else
         {
-            wormText.text = "WormHole Lvl " + wormLevel + "\nProduction " + MoneyCalc(wormProduction) + "        " + TimeCalc(wormInter) + "\nBuy Cost: " + MoneyCalc(Worm.cost);
+            wormText.text = "WormHole Lvl " + wormLevel + "\nProduction " + MoneyCalc(wormProduction) + "  " + TimeCalc(wormInter) + "\nBuy Cost: " + MoneyCalc(Worm.cost);
         }
 
-        moneyText.text = "Money = $" + MoneyCalc(money);
+        moneyText.text = "$" + MoneyCalc(money);
     }
 
 
@@ -278,6 +279,10 @@ public class GameManager : MonoBehaviour
         if(tempMoney.Length > 7)
         {
             return tempMoney[0] + "." + tempMoney.Substring(1, 3) + "x10^" + (tempMoney.Length - 1);
+        }
+        else if(tempMoney.Length > 6)
+        {
+            return tempMoney[0] + "," + tempMoney.Substring(1, 3) + "," + tempMoney.Substring(+4);
         }
         return tempMoney;
     }

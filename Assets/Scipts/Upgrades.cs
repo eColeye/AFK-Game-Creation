@@ -5,464 +5,245 @@ using UnityEngine.UI;
 
 public class Upgrades : MonoBehaviour
 {
-
-    //Texts
-    public Text T1;
-    public Text T2;
-    public Text T3;
-    public Text T4;
-    public Text T5;
-    public Text T6;
-    public Text T7;
-    public Text T8;
-    public Text T9;
-    public Text T10;
-    public Text T11;
-    public Text T12;
-
-    //Buttons
-    public GameObject U1;
-    public GameObject U2;
-    public GameObject U3;
-    public GameObject U4;
-    public GameObject U5;
-    public GameObject U6;
-    public GameObject U7;
-    public GameObject U8;
-    public GameObject U9;
-    public GameObject U10;
-    public GameObject U11;
-    public GameObject U12;
-
+    public Text[] T;
     public GameObject[] U;
 
-    //Strings
-    private static string[] strings = { 
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10",
-        "11",
-        "12"
+    //Upgrades
+    private float[] C =
+{
+        250000f,
+        500000f,
+        1000000f,
+        2500000f,
+        5000000f,
+        15000000f,
+        400000000f,
+        4200000000f,
+        50000000000f,
+        500000000000f,
+        5000000000000f,
+        50000000000000f,
+    };
+    private string[] S = { 
+        "Miner profit x3\n",
+        "Drill profit x3\n",
+        "Car profit x3\n",
+        "Granade profit x3\n",
+        "Coal Mine profit x3\n",
+        "UHaul Truck profit x3\n",
+        "TnT profit x3\n",
+        "Rocket Ship profit x3\n",
+        "Nuke profit x3\n",
+        "UFO profit x3\n",
+        "BlackHole profit x3\n",
+        "WormHole profit x3\n"
     };
 
     //Other
-    public static int bought = 0;
-
-    public void Upgrade(int key)
-    {
-        int count = 0;
-        for(int i = 1; count < key; i++)
-        {
-            if (strings[i] != "NULL"){count++;}
-            if(count == key)
-            {
-                switch(i)
-                {
-                    case 1:
-                        Up1();
-                        Refresh();
-                        return;
-                    case 2:
-                        Up2();
-                        Refresh();
-                        return;
-                    case 3:
-                        Up3();
-                        Refresh();
-                        return;
-                    case 4:
-                        Up4();
-                        Refresh();
-                        return;
-                    case 5:
-                        Up5();
-                        Refresh();
-                        return;
-                    case 6:
-                        Up6();
-                        Refresh();
-                        return;
-                    case 7:
-                        Up7();
-                        Refresh();
-                        return;
-                    case 8:
-                        Up8();
-                        Refresh();
-                        return;
-                    case 9:
-                        Up9();
-                        Refresh();
-                        return;
-                    case 10:
-                        Up10();
-                        Refresh();
-                        return;
-                    case 11:
-                        Up11();
-                        Refresh();
-                        return;
-                    case 12:
-                        Up12();
-                        Refresh();
-                        return;
-                }
-            }
-        }
-    }
+    public int bought = 0;
 
     private void Start()
     {
+        for(int i = 0; i < 12; i++)
+        {
+            S[i] = S[i] + "$" + (MoneyCalc(C[i])).ToString();
+        }
         Refresh();
+    }
+
+    public void Upgrade(int key)
+    {
+        int find = Find(key);
+        if (!GameManager.Has_Money(C[find]))
+        {
+            return;
+        }
+        GameManager.Spend(C[find]);
+        switch ((find +1))
+        {
+            case 1:
+                Up1();
+                Refresh();
+                return;
+            case 2:
+                Up2();
+                Refresh();
+                return;
+            case 3:
+                Up3();
+                Refresh();
+                return;
+            case 4:
+                Up4();
+                Refresh();
+                return;
+            case 5:
+                Up5();
+                Refresh();
+                return;
+            case 6:
+                Up6();
+                Refresh();
+                return;
+            case 7:
+                Up7();
+                Refresh();
+                return;
+            case 8:
+                Up8();
+                Refresh();
+                return;
+            case 9:
+                Up9();
+                Refresh();
+                return;
+            case 10:
+                Up10();
+                Refresh();
+                return;
+            case 11:
+                Up11();
+                Refresh();
+                return;
+            case 12:
+                Up12();
+                Refresh();
+                return;
+        }
+    }
+
+    public int Find(int key)
+    {
+        int f = 0;
+        for(int i = 0; i <= 11; i++)
+        {
+            if(S[i] != "NULL")
+            {
+                f++;
+            }
+            if(f == key) 
+            {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public void Up1()
     {
         //Upgrade Miner
         Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
+        S[0] = "NULL";
         bought++;
     }
     public void Up2()
     {
         //Upgrade Miner
         Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
+        S[1] = "NULL";
         bought++;
     }
     public void Up3()
     {
         //Upgrade Miner
         Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
+        S[2] = "NULL";
         bought++;
     }
     public void Up4()
     {
         //Upgrade Miner
         Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
+        S[3] = "NULL";
         bought++;
     }
     public void Up5()
     {
         //Upgrade Miner
         Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
+        S[4] = "NULL";
         bought++;
     }
     public void Up6()
     {
         //Upgrade Miner
         Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
+        S[5] = "NULL";
         bought++;
     }
     public void Up7()
     {
         //Upgrade Miner
         Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
+        S[6] = "NULL";
         bought++;
     }
     public void Up8()
     {
         //Upgrade Miner
         Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
+        S[7] = "NULL";
         bought++;
     }
     public void Up9()
     {
         //Upgrade Miner
         Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
+        S[8] = "NULL";
         bought++;
     }
     public void Up10()
     {
         //Upgrade Miner
         Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
+        S[9] = "NULL";
         bought++;
     }
     public void Up11()
     {
         //Upgrade Miner
         Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
+        S[10] = "NULL";
         bought++;
     }
     public void Up12()
     {
         //Upgrade Miner
         Miner.initialRev = Miner.initialRev * 6;
-        strings[0] = "NULL";
+        S[11] = "NULL";
         bought++;
     }
 
     private void Refresh()
     {
-        for(int i = 1 ; i <= (12 - bought); i++)
+        int found = 0;
+        for(int i = 0; i <= (11); i++)
         {
-            int found = 0; 
-            switch(i)
+            if (S[i] != "NULL")
             {
-                //assign text to each upgrade.
-                case 1:
-                    for(int temp = 0; found <= i; temp++) 
-                    {
-                        if (strings[temp] != "NULL")
-                        {
-                            found++;
-                            if(found == i)
-                            {
-                                T1.text = strings[temp]; 
-                                break;
-                            }
-                        }
-                    }
-                    break;
-                case 2:
-                    for (int temp = 0; found <= i; temp++)
-                    {
-                        if (strings[temp] != "NULL")
-                        {
-                            found++;
-                            if (found == i)
-                            {
-                                T2.text = strings[temp];
-                                break;
-                            }
-                        }
-                    }
-                    break;
-                case 3:
-                    for (int temp = 0; found <= i; temp++)
-                    {
-                        if (strings[temp] != "NULL")
-                        {
-                            found++;
-                            if (found == i)
-                            {
-                                T3.text = strings[temp];
-                                break;
-                            }
-                        }
-                    }
-                    break;
-                case 4:
-                    for (int temp = 0; found <= i; temp++)
-                    {
-                        if (strings[temp] != "NULL")
-                        {
-                            found++;
-                            if (found == i)
-                            {
-                                T4.text = strings[temp];
-                                break;
-                            }
-                        }
-                    }
-                    break;
-                case 5:
-                    for (int temp = 0; found <= i; temp++)
-                    {
-                        if (strings[temp] != "NULL")
-                        {
-                            found++;
-                            if (found == i)
-                            {
-                                T5.text = strings[temp];
-                                break;
-                            }
-                        }
-                    }
-                    break;
-                case 6:
-                    for (int temp = 0; found <= i; temp++)
-                    {
-                        if (strings[temp] != "NULL")
-                        {
-                            found++;
-                            if (found == i)
-                            {
-                                T6.text = strings[temp];
-                                break;
-                            }
-                        }
-                    }
-                    break;
-                case 7:
-                    for (int temp = 0; found <= i; temp++)
-                    {
-                        if (strings[temp] != "NULL")
-                        {
-                            found++;
-                            if (found == i)
-                            {
-                                T7.text = strings[temp];
-                                break;
-                            }
-                        }
-                    }
-                    break;
-                case 8:
-                    for (int temp = 0; found <= i; temp++)
-                    {
-                        if (strings[temp] != "NULL")
-                        {
-                            found++;
-                            if (found == i)
-                            {
-                                T8.text = strings[temp];
-                                break;
-                            }
-                        }
-                    }
-                    break;
-                case 9:
-                    for (int temp = 0; found <= i; temp++)
-                    {
-                        if (strings[temp] != "NULL")
-                        {
-                            found++;
-                            if (found == i)
-                            {
-                                T9.text = strings[temp];
-                                break;
-                            }
-                        }
-                    }
-                    break;
-                case 10:
-                    for (int temp = 0; found <= i; temp++)
-                    {
-                        if (strings[temp] != "NULL")
-                        {
-                            found++;
-                            if (found == i)
-                            {
-                                T10.text = strings[temp];
-                                break;
-                            }
-                        }
-                    }
-                    break;
-                case 11:
-                    for (int temp = 0; found <= i; temp++)
-                    {
-                        if (strings[temp] != "NULL")
-                        {
-                            found++;
-                            if (found == i)
-                            {
-                                T11.text = strings[temp];
-                                break;
-                            }
-                        }
-                    }
-                    break;
-                case 12:
-                    for (int temp = 0; found <= i; temp++)
-                    {
-                        if (strings[temp] != "NULL")
-                        {
-                            found++;
-                            if (found == i)
-                            {
-                                T12.text = strings[temp];
-                                break;
-                            }
-                        }
-                    }
-                    break;
-            }
+                T[found].text = S[i];
+                found++;
+            }        
         }
-        for(int i = 1; i <= bought; i++)
+
+        //deactivating button
+        if(bought > 0)
         {
-            switch (i)
-            {
-                case 1:
-                    U12.SetActive(false);
-                    break;
-                case 2:
-                    U11.SetActive(false);
-                    break;
-                case 3:
-                    U10.SetActive(false);
-                    break;
-                case 4:
-                    U9.SetActive(false);
-                    break;
-                case 5:
-                    U8.SetActive(false);
-                    break;
-                case 6:
-                    U7.SetActive(false);
-                    break;
-                case 7:
-                    U6.SetActive(false);
-                    break;
-                case 8:
-                    U5.SetActive(false);
-                    break;
-                case 9:
-                    U4.SetActive(false);
-                    break;
-                case 10:
-                    U3.SetActive(false);
-                    break;
-                case 11:
-                    U2.SetActive(false);
-                    break;
-                case 12:
-                    U1.SetActive(false);
-                    break;
-            }
+            U[12 - bought].SetActive(false);
         }
     }
 
-    /*
-        for(int i = 1 ; i <= (12 - bought); i++)
-            {
-                switch(i)
-                {
-                    case 1:
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                    case 4:
-                        break;
-                    case 5:
-                        break;
-                    case 6:
-                        break;
-                    case 7:
-                        break;
-                    case 8:
-                        break;
-                    case 9:
-                        break;
-                    case 10:
-                        break;
-                    case 11:
-                        break;
-                    case 12:
-                        break;
-                }
-            }
-
-
-
-    */
-}   
+    public string MoneyCalc(float cost)
+    {
+        string tempMoney = cost.ToString("F0");
+        if (tempMoney.Length > 7)
+        {
+            return tempMoney[0] + "." + tempMoney.Substring(1, 3) + "x10^" + (tempMoney.Length - 1);
+        }
+        else if (tempMoney.Length > 6)
+        {
+            return tempMoney[0] + "," + tempMoney.Substring(1, 3) + "," + tempMoney.Substring(+4);
+        }
+        return tempMoney;
+    }
+}
