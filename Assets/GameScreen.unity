@@ -418,14 +418,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2053891191}
-        m_TargetAssemblyTypeName: Miner, Assembly-CSharp
+      - m_Target: {fileID: 2053891202}
+        m_TargetAssemblyTypeName: Upgrades, Assembly-CSharp
         m_MethodName: Upgrade
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -630,14 +630,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2053891191}
-        m_TargetAssemblyTypeName: Miner, Assembly-CSharp
+      - m_Target: {fileID: 2053891202}
+        m_TargetAssemblyTypeName: Upgrades, Assembly-CSharp
         m_MethodName: Upgrade
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2099,14 +2099,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2053891191}
-        m_TargetAssemblyTypeName: Miner, Assembly-CSharp
+      - m_Target: {fileID: 2053891202}
+        m_TargetAssemblyTypeName: Upgrades, Assembly-CSharp
         m_MethodName: Upgrade
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 9
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2963,14 +2963,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2053891191}
-        m_TargetAssemblyTypeName: Miner, Assembly-CSharp
+      - m_Target: {fileID: 2053891202}
+        m_TargetAssemblyTypeName: Upgrades, Assembly-CSharp
         m_MethodName: Upgrade
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3175,14 +3175,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2053891191}
-        m_TargetAssemblyTypeName: Miner, Assembly-CSharp
+      - m_Target: {fileID: 2053891202}
+        m_TargetAssemblyTypeName: Upgrades, Assembly-CSharp
         m_MethodName: Upgrade
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 12
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3721,7 +3721,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.074}
   m_AnchorMax: {x: 0.8983983, y: 1}
-  m_AnchoredPosition: {x: -162, y: 192}
+  m_AnchoredPosition: {x: -162, y: 198}
   m_SizeDelta: {x: -448.4335, y: -311.7312}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &988281199
@@ -3744,7 +3744,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 1
-  m_CellSize: {x: 175, y: 95}
+  m_CellSize: {x: 170, y: 100}
   m_Spacing: {x: 50, y: 10}
   m_Constraint: 1
   m_ConstraintCount: 2
@@ -3910,14 +3910,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2053891191}
-        m_TargetAssemblyTypeName: Miner, Assembly-CSharp
+      - m_Target: {fileID: 2053891202}
+        m_TargetAssemblyTypeName: Upgrades, Assembly-CSharp
         m_MethodName: Upgrade
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4043,14 +4043,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2053891191}
-        m_TargetAssemblyTypeName: Miner, Assembly-CSharp
+      - m_Target: {fileID: 2053891202}
+        m_TargetAssemblyTypeName: Upgrades, Assembly-CSharp
         m_MethodName: Upgrade
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5502,14 +5502,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2053891191}
-        m_TargetAssemblyTypeName: Miner, Assembly-CSharp
+      - m_Target: {fileID: 2053891202}
+        m_TargetAssemblyTypeName: Upgrades, Assembly-CSharp
         m_MethodName: Upgrade
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5756,14 +5756,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2053891191}
-        m_TargetAssemblyTypeName: Miner, Assembly-CSharp
+      - m_Target: {fileID: 2053891202}
+        m_TargetAssemblyTypeName: Upgrades, Assembly-CSharp
         m_MethodName: Upgrade
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5919,14 +5919,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2053891191}
-        m_TargetAssemblyTypeName: Miner, Assembly-CSharp
+      - m_Target: {fileID: 2053891202}
+        m_TargetAssemblyTypeName: Upgrades, Assembly-CSharp
         m_MethodName: Upgrade
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6897,14 +6897,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2053891191}
-        m_TargetAssemblyTypeName: Miner, Assembly-CSharp
+      - m_Target: {fileID: 2053891202}
+        m_TargetAssemblyTypeName: Upgrades, Assembly-CSharp
         m_MethodName: Upgrade
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 11
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7191,14 +7191,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2053891191}
-        m_TargetAssemblyTypeName: Miner, Assembly-CSharp
+      - m_Target: {fileID: 2053891202}
+        m_TargetAssemblyTypeName: Upgrades, Assembly-CSharp
         m_MethodName: Upgrade
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7613,46 +7613,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b73f27574b5ad264496901bd3317a85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  T1: {fileID: 1329893851}
-  T2: {fileID: 856238589}
-  T3: {fileID: 211090067}
-  T4: {fileID: 1415318845}
-  T5: {fileID: 1618873669}
-  T6: {fileID: 513186275}
-  T7: {fileID: 1124415784}
-  T8: {fileID: 274307997}
-  T9: {fileID: 959089744}
-  T10: {fileID: 1290851397}
-  T11: {fileID: 1847759775}
-  T12: {fileID: 965672410}
-  U1: {fileID: 1749548922}
-  U2: {fileID: 766614964}
-  U3: {fileID: 1950464574}
-  U4: {fileID: 1013891362}
-  U5: {fileID: 1620195914}
-  U6: {fileID: 1020881827}
-  U7: {fileID: 217361159}
-  U8: {fileID: 62424180}
-  U9: {fileID: 516440284}
-  U10: {fileID: 1697316990}
-  U11: {fileID: 1890436237}
-  U12: {fileID: 776300209}
+  T:
+  - {fileID: 1329893851}
+  - {fileID: 856238589}
+  - {fileID: 211090067}
+  - {fileID: 1415318845}
+  - {fileID: 1618873669}
+  - {fileID: 513186275}
+  - {fileID: 1124415784}
+  - {fileID: 274307997}
+  - {fileID: 959089744}
+  - {fileID: 1290851397}
+  - {fileID: 1847759775}
+  - {fileID: 965672410}
   U:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1749548922}
+  - {fileID: 766614964}
+  - {fileID: 1950464574}
+  - {fileID: 1013891362}
+  - {fileID: 1620195914}
+  - {fileID: 1020881827}
+  - {fileID: 217361159}
+  - {fileID: 62424180}
+  - {fileID: 516440284}
+  - {fileID: 1697316990}
+  - {fileID: 1890436237}
+  - {fileID: 776300209}
+  bought: 0
 --- !u!1 &2142487602
 GameObject:
   m_ObjectHideFlags: 0
